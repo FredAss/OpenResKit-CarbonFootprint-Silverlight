@@ -1,0 +1,82 @@
+﻿<UserControl
+  x:Class="Ork.Framework.CarbonFootprints.Views.EnergyConsumptionView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+  d:DesignHeight="300"
+  d:DesignWidth="400">
+
+  <UserControl.Resources>
+    <ResourceDictionary
+      Source="../Resources/Styles.xaml" />
+  </UserControl.Resources>
+
+  <StackPanel>
+
+    <TextBlock
+      Style="{StaticResource TextBlockLabelStyle}"
+      Text="Verbrauch" />
+
+    <Grid>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition
+          Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <TextBox
+        Grid.Column="0"
+        TextAlignment="Right"
+        Style="{StaticResource TextBoxStyle}"
+        Text="{Binding Consumption, Mode=TwoWay}" />
+
+      <TextBlock
+        Grid.Column="1"
+        Text="kWh"
+        Style="{StaticResource TextBlockLabelStyle}" />
+
+    </Grid>
+
+    <TextBlock
+      Style="{StaticResource TextBlockLabelStyle}"
+      Text="Energiequelle" />
+
+    <ComboBox
+      Style="{StaticResource ComboBoxStyle}"
+      ItemsSource="{Binding EnergySource, Mode=OneTime, Converter={StaticResource EnumToIEnumerableConverter}}"
+      SelectedIndex="{Binding EnergySource, Mode=TwoWay, Converter={StaticResource EnumToIntConverter}}" />
+
+    <TextBlock
+      Style="{StaticResource TextBlockLabelStyle}"
+      Text="CO2 Produktion"
+      Visibility="{Binding EnergySource, Converter={StaticResource EnergySourceToVisibilityConverter}}" />
+
+    <Grid>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition
+          Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <TextBox
+        Grid.Column="0"
+        TextAlignment="Right"
+        Style="{StaticResource TextBoxStyle}"
+        Text="{Binding CarbonProduction, Mode=TwoWay}"
+        Visibility="{Binding EnergySource, Converter={StaticResource EnergySourceToVisibilityConverter}}" />
+
+      <TextBlock
+        Grid.Column="1"
+        Text="g CO2"
+        Style="{StaticResource TextBlockLabelStyle}"
+        Visibility="{Binding EnergySource, Converter={StaticResource EnergySourceToVisibilityConverter}}" />
+
+    </Grid>
+
+  </StackPanel>
+
+</UserControl>

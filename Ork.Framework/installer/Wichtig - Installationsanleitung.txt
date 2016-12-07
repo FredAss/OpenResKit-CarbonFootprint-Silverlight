@@ -1,0 +1,13 @@
+Installationsanleitung (Carbon Footprint Tool - carbonfootprint_debug_x86_x.x.xxx.xx.zip)
+
+1. 	Entpacken Sie das heruntergeladene Archiv in eine Verzeichnis Ihrer Wahl.
+ 
+2. 	Stellen Sie sicher, dass Sie Microsoft Silverlight 5 auf Ihrem Rechner installiert haben!
+	Falls dieses nicht installiert ist, installieren Sie dieses zunächst von http://www.microsoft.com/silverlight/
+
+3.	Starten Sie den Installationsvorgang indem Sie in das zuvor gewählte Verzeichnis mit den entpackten Dateien des Archiv wechseln.
+	Führen Sie die Datei install_x86.bat bzw. install_x64.bat als Administrator aus.
+
+5.	Herzlichen Glückwunsch Sie sollten nun das Carbon Footprint Tool erfolgreich installiert haben.
+
+6.	Starten Sie das Carbon Footprint Tool über die Verknüpfung auf Ihrem Desktop oder unter Start -> Programme -> Ork.Framework 

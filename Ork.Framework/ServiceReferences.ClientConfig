@@ -1,0 +1,33 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_PositionInformationService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_PositionDataContext" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ExampleDataSeederService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:7000/PositionInformationService"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PositionInformationService"
+                contract="PositionInformationService.PositionInformationService"
+                name="BasicHttpBinding_PositionInformationService" />
+            <endpoint address="http://localhost:7000/PositionDataContext"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PositionDataContext"
+                contract="PositionDataProvider.PositionDataContext" name="BasicHttpBinding_PositionDataContext" />
+            <endpoint address="http://localhost:7000/ExampleDataSeeder" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_ExampleDataSeederService"
+                contract="ExampleDataSeederService.ExampleDataSeederService"
+                name="BasicHttpBinding_ExampleDataSeederService" />
+        </client>
+    </system.serviceModel>
+</configuration>

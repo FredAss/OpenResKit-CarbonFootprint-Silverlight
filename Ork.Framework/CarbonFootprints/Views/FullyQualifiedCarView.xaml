@@ -1,0 +1,106 @@
+﻿<UserControl
+  x:Class="Ork.Framework.CarbonFootprints.Views.FullyQualifiedCarView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+  d:DesignHeight="300"
+  d:DesignWidth="400">
+
+  <UserControl.Resources>
+    <ResourceDictionary
+      Source="../Resources/Styles.xaml" />
+  </UserControl.Resources>
+
+  <StackPanel>
+
+    <TextBlock
+      Style="{StaticResource TextBlockLabelStyle}"
+      Text="Streckenlänge" />
+
+    <Grid>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition
+          Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <TextBox
+        Grid.Column="0"
+        TextAlignment="Right"
+        Style="{StaticResource TextBoxStyle}"
+        Text="{Binding Kilometrage, Mode=TwoWay}" />
+
+      <TextBlock
+        Grid.Column="1"
+        Text="km"
+        Style="{StaticResource TextBlockLabelStyle}" />
+
+    </Grid>
+
+    <TextBlock
+      Style="{StaticResource TextBlockLabelStyle}"
+      Text="Hersteller" />
+
+    <ComboBox
+      Style="{StaticResource ComboBoxStyle}"
+      ItemsSource="{Binding ManufacturerSource}"
+      SelectedItem="{Binding SelectedManufacturer, Mode=TwoWay}" />
+
+    <TextBlock
+      Style="{StaticResource TextBlockLabelStyle}"
+      Text="Modell" />
+
+    <ComboBox
+      Style="{StaticResource ComboBoxStyle}"
+      ItemsSource="{Binding ModelSource}"
+      SelectedItem="{Binding SelectedModel, Mode=TwoWay}" />
+
+    <TextBlock
+      Style="{StaticResource TextBlockLabelStyle}"
+      Text="Fahrzeugbeschreibung" />
+
+    <ComboBox
+      Style="{StaticResource ComboBoxStyle}"
+      ItemsSource="{Binding DescriptionSource}"
+      SelectedItem="{Binding SelectedDescription, Mode=TwoWay}" />
+
+    <TextBlock
+      Style="{StaticResource TextBlockLabelStyle}"
+      Text="Jahr" />
+
+    <ComboBox
+      Style="{StaticResource ComboBoxStyle}"
+      ItemsSource="{Binding YearSource}"
+      SelectedItem="{Binding SelectedYear, Mode=TwoWay}" />
+
+    <TextBlock
+      Style="{StaticResource TextBlockLabelStyle}"
+      Text="Benutzerspezifischer Verbrauch" />
+
+    <Grid>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition
+          Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <TextBox
+        Grid.Column="0"
+        TextAlignment="Right"
+        Style="{StaticResource TextBoxStyle}"
+        Text="{Binding Consumption, Mode=TwoWay}" />
+
+      <TextBlock
+        Grid.Column="1"
+        Text="l/100km"
+        Style="{StaticResource TextBlockLabelStyle}" />
+
+    </Grid>
+
+  </StackPanel>
+
+</UserControl>

@@ -1,0 +1,17 @@
+﻿<OutOfBrowserSettings
+  ShortName="OpenResKit"
+  EnableGPUAcceleration="True"
+  ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>Der Ork.Framework ermöglicht es Carbonfootprints zu erstellen, berechen und zu verwalten.</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings
+      Title="OpenResKit"
+      Height="800"
+      Width="1050" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.SecuritySettings>
+    <SecuritySettings
+      ElevatedPermissions="Required" />
+  </OutOfBrowserSettings.SecuritySettings>
+  <OutOfBrowserSettings.Icons />
+</OutOfBrowserSettings>

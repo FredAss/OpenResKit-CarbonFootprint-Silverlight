@@ -1,0 +1,13 @@
+﻿<UserControl
+  x:Class="Ork.Framework.CarbonFootprints.WorkspaceView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+  xmlns:clt="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit">
+
+  <clt:TransitioningContentControl
+    Background="#FF051F42"
+    cal:View.Context="{Binding State, Mode=TwoWay}"
+    cal:View.Model="{Binding}"
+    Style="{StaticResource specialTransition}" />
+</UserControl>

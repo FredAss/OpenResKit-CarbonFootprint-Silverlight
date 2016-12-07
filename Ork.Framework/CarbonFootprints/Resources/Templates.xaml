@@ -1,0 +1,303 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:converter="clr-namespace:Ork.Framework.CarbonFootprints.Converter">
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary
+      Source="Styles.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+
+  <converter:EnergySourceToVisibilityConverter
+    x:Key="EnergySourceToVisibilityConverter" />
+
+  <ControlTemplate
+    x:Key="AddButtonTemplate">
+    <Grid>
+      <Ellipse
+        Fill="SteelBlue"
+        Stroke="Black"
+        StrokeThickness="3"
+        Height="50"
+        Width="50" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="25"
+        Y1="10"
+        X2="25"
+        Y2="40" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="10"
+        Y1="25"
+        X2="40"
+        Y2="25" />
+    </Grid>
+  </ControlTemplate>
+
+  <ControlTemplate
+    x:Key="AddButtonInvertedTemplate">
+    <Grid>
+      <Ellipse
+        Fill="White"
+        Stroke="Black"
+        StrokeThickness="3"
+        Height="50"
+        Width="50" />
+      <Line
+        Stroke="SteelBlue"
+        StrokeThickness="3"
+        X1="25"
+        Y1="10"
+        X2="25"
+        Y2="40" />
+      <Line
+        Stroke="SteelBlue"
+        StrokeThickness="3"
+        X1="10"
+        Y1="25"
+        X2="40"
+        Y2="25" />
+    </Grid>
+  </ControlTemplate>
+
+  <ControlTemplate
+    x:Key="CloneButtonTemplate">
+    <Grid>
+      <Ellipse
+        Fill="YellowGreen"
+        Stroke="Black"
+        StrokeThickness="3"
+        Height="50"
+        Width="50" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="13"
+        Y1="13"
+        X2="33"
+        Y2="13"
+        StrokeEndLineCap="Triangle" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="33"
+        Y1="13"
+        X2="33"
+        Y2="33"
+        StrokeEndLineCap="Triangle" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="33"
+        Y1="33"
+        X2="13"
+        Y2="33"
+        StrokeEndLineCap="Triangle" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="13"
+        Y1="33"
+        X2="13"
+        Y2="13"
+        StrokeEndLineCap="Triangle" />
+
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="17"
+        Y1="17"
+        X2="37"
+        Y2="17"
+        StrokeEndLineCap="Triangle" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="37"
+        Y1="17"
+        X2="37"
+        Y2="37"
+        StrokeEndLineCap="Triangle" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="37"
+        Y1="37"
+        X2="17"
+        Y2="37"
+        StrokeEndLineCap="Triangle" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="17"
+        Y1="37"
+        X2="17"
+        Y2="17"
+        StrokeEndLineCap="Triangle" />
+    </Grid>
+  </ControlTemplate>
+
+  <ControlTemplate
+    x:Key="EditButtonTemplate">
+    <Grid>
+      <Ellipse
+        Fill="{StaticResource CarbonColor}"
+        Stroke="Black"
+        StrokeThickness="3"
+        Height="50"
+        Width="50" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="30"
+        Y1="10"
+        X2="40"
+        Y2="20"
+        StrokeStartLineCap="Round"
+        StrokeEndLineCap="Round" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="40"
+        Y1="20"
+        X2="25"
+        Y2="35"
+        StrokeStartLineCap="Round"
+        StrokeEndLineCap="Round" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="25"
+        Y1="35"
+        X2="15"
+        Y2="35"
+        StrokeStartLineCap="Round"
+        StrokeEndLineCap="Round" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="15"
+        Y1="35"
+        X2="15"
+        Y2="25"
+        StrokeStartLineCap="Round"
+        StrokeEndLineCap="Round" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="15"
+        Y1="25"
+        X2="30"
+        Y2="10"
+        StrokeStartLineCap="Round"
+        StrokeEndLineCap="Round" />
+    </Grid>
+  </ControlTemplate>
+
+  <ControlTemplate
+    x:Key="RefreshButtonTemplate">
+    <Grid>
+      <Ellipse
+        Fill="{StaticResource CarbonColor}"
+        Stroke="Black"
+        StrokeThickness="3"
+        Height="50"
+        Width="50" />
+      <Ellipse
+        Stroke="White"
+        StrokeThickness="3"
+        StrokeDashArray="2"
+        StrokeDashCap="Round"
+        Height="30"
+        Width="30"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center" />
+    </Grid>
+  </ControlTemplate>
+
+  <ControlTemplate
+    x:Key="RefreshButtonInvertedTemplate">
+    <Grid>
+      <Ellipse
+        Fill="White"
+        Stroke="Black"
+        StrokeThickness="3"
+        Height="50"
+        Width="50" />
+      <Ellipse
+        Stroke="{StaticResource CarbonColor}"
+        StrokeThickness="3"
+        StrokeDashArray="2"
+        StrokeDashCap="Round"
+        Height="30"
+        Width="30"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center" />
+    </Grid>
+  </ControlTemplate>
+
+  <ControlTemplate
+    x:Key="RemoveButtonTemplate">
+    <Grid>
+      <Ellipse
+        Fill="Gray"
+        Stroke="Black"
+        StrokeThickness="3"
+        Height="50"
+        Width="50" />
+      <Line
+        Stroke="White"
+        StrokeThickness="3"
+        X1="10"
+        Y1="25"
+        X2="40"
+        Y2="25" />
+    </Grid>
+  </ControlTemplate>
+
+  <ControlTemplate
+    x:Key="FlightButtonTemplate">
+    <Grid>
+      <Ellipse
+        Fill="SteelBlue"
+        Stroke="Black"
+        StrokeThickness="3"
+        Height="50"
+        Width="50" />
+      <Image
+        Source="../CarbonFootprints/Resources/Images/flight.png" />
+    </Grid>
+  </ControlTemplate>
+
+  <ControlTemplate
+    x:Key="EnergyConsumptionButtonTemplate">
+    <Grid>
+      <Ellipse
+        Fill="SteelBlue"
+        Stroke="Black"
+        StrokeThickness="3"
+        Height="50"
+        Width="50" />
+      <Image
+        Source="../CarbonFootprints/Resources/Images/energyconsumption.png" />
+    </Grid>
+  </ControlTemplate>
+
+  <ControlTemplate
+    x:Key="PublicTransportButtonTemplate">
+    <Grid>
+      <Ellipse
+        Fill="SteelBlue"
+        Stroke="Black"
+        StrokeThickness="3"
+        Height="50"
+        Width="50" />
+      <Image
+        Source="../CarbonFootprints/Resources/Images/publictransport.png" />
+    </Grid>
+  </ControlTemplate>
+
+</ResourceDictionary>

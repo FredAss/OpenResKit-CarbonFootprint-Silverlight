@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE5DC5CB-D16A-4A4C-A0E5-92CB9C55C94D}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ork.Framework</RootNamespace>
+    <AssemblyName>Ork.Framework</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Ork.Framework.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Ork.Framework.App</SilverlightAppEntry>
+    <TestPageFileName>Ork.FrameworkTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>true</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro">
+      <HintPath>..\packages\Caliburn.Micro.1.5.2\lib\sl5\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm.SL, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\sl4\Microsoft.Data.Edm.SL.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData.SL, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\sl4\Microsoft.Data.OData.SL.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client.SL, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.0\lib\sl4\Microsoft.Data.Services.Client.SL.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Effects">
+      <HintPath>..\lib\Microsoft.Expression.Effects.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="SilverlightControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\SilverlightControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition.Initialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ComponentModel.Composition.Initialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial.SL, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\sl4\System.Spatial.SL.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit">
+      <HintPath>..\packages\SilverlightToolkit-DataViz.4.2010.4\lib\sl4\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit">
+      <HintPath>..\packages\SilverlightToolkit-Layout.4.2010.4\lib\sl4\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Navigation, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit">
+      <HintPath>..\packages\SilverlightToolkit-Core.4.2010.4\lib\sl4\System.Windows.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\packages\Caliburn.Micro.1.5.2\lib\sl5\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CarbonFootprints\Commands\RelayCommand.cs" />
+    <Compile Include="CarbonFootprints\Converter\EnergySourceToVisibilityConverter.cs" />
+    <Compile Include="CarbonFootprints\Converter\EnumToIEnumerableConverter.cs" />
+    <Compile Include="CarbonFootprints\Model\EnergySource.cs" />
+    <Compile Include="CarbonFootprints\Model\ExampleDataProvider.cs" />
+    <Compile Include="CarbonFootprints\Model\SettingsProvider.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\ResponsibleSubjectViewModel.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\StackChartDataPointViewModel.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\AirportBasedFlightViewModel.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\AirportEntryViewModel.cs" />
+    <Compile Include="CarbonFootprints\Factories\CarbonFootprintViewModelFactory.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\MachineEnergyConsumptionViewModel.cs" />
+    <Compile Include="CarbonFootprints\Model\PositionDataAccessor.cs" />
+    <Compile Include="CarbonFootprints\Model\PositionMetadataAttribute.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\CarViewModel.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\PieChartDataPointViewModel.cs" />
+    <Compile Include="CarbonFootprints\Converter\EnumToIntConverter.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\EnergyConsumptionViewModel.cs" />
+    <Compile Include="CarbonFootprints\Factories\Factories.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\FlightViewModel.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\FullyQualifiedCarViewModel.cs" />
+    <Compile Include="CarbonFootprints\Interfaces\IPositionViewModelFactory.cs" />
+    <Compile Include="CarbonFootprints\Interfaces\IPositionMetadata.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\PublicTransportViewModel.cs" />
+    <Compile Include="CarbonFootprints\Factories\ContextFactory.cs" />
+    <Compile Include="CarbonFootprints\Model\ContextRepository.cs" />
+    <Compile Include="CarbonFootprints\Controls\BindableStackedColumnSeries.cs" />
+    <Compile Include="CarbonFootprints\Views\PieChartControl.xaml.cs">
+      <DependentUpon>PieChartControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CarbonFootprints\Views\PositionView.xaml.cs">
+      <DependentUpon>PositionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CarbonFootprints\Views\StackedChartControl.xaml.cs">
+      <DependentUpon>StackedChartControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\ApplicationCloseCheck.cs" />
+    <Compile Include="Framework\Behaviors\Popup.cs" />
+    <Compile Include="Framework\Behaviors\PopupHorizontalAlignment.cs" />
+    <Compile Include="Framework\Behaviors\PopupOrientation.cs" />
+    <Compile Include="Framework\Behaviors\PopupOrientationCollection.cs" />
+    <Compile Include="Framework\Behaviors\PopupPlacement.cs" />
+    <Compile Include="Framework\Behaviors\PopupVerticalAlignment.cs" />
+    <Compile Include="Framework\Controls\CustomTransitionControl.cs" />
+    <Compile Include="Framework\Controls\TiledBackground.cs" />
+    <Compile Include="Framework\DocumentBase.cs" />
+    <Compile Include="Framework\IDocumentWorkspace.cs" />
+    <Compile Include="Framework\IHaveShutdownTask.cs" />
+    <Compile Include="CarbonFootprints\ViewModels\PositionViewModel.cs" />
+    <Compile Include="CarbonFootprints\CarbonFootprintViewModel.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Service References\DomainModelService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.datasvcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ExampleDataSeederService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PositionDataProvider\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PositionInformationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\TagColor.cs" />
+    <Compile Include="Settings\TagColorProvider.cs" />
+    <Compile Include="Shell\ApplicationCloseStrategy.cs" />
+    <Compile Include="Shell\DialogConductorView.xaml.cs">
+      <DependentUpon>DialogConductorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\DialogConductorViewModel.cs" />
+    <Compile Include="Framework\IDialogManager.cs" />
+    <Compile Include="Framework\IMessageBox.cs" />
+    <Compile Include="Framework\MessageBoxOptions.cs" />
+    <Compile Include="Shell\MessageBoxViewModel.cs" />
+    <Compile Include="Framework\Converters\NullToCollapsedConverter.cs" />
+    <Compile Include="CarbonFootprints\WorkspaceViewModel.cs" />
+    <Compile Include="Settings\SettingsViewModel.cs" />
+    <Compile Include="Framework\IShell.cs" />
+    <Compile Include="Framework\IWorkspace.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shell\ScreensBootstrapper.cs" />
+    <Compile Include="Shell\ShellViewModel.cs" />
+    <Compile Include="Framework\DocumentWorkspace.cs" />
+    <Compile Include="Framework\DocumentWorkspaceState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="installer\install_x64.bat" />
+    <None Include="installer\install_x86.bat" />
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\DomainModelService\service.edmx" />
+    <None Include="Service References\ExampleDataSeederService\ExampleDataSeeder.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExampleDataSeederService\ExampleDataSeederService.wsdl" />
+    <None Include="Service References\PositionDataProvider\Ork.Framework.PositionDataProvider.FullyQualifiedCarData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PositionDataProvider\Ork.Framework.PositionDataProvider.GlobalAirport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PositionDataProvider\PositionDataContext.wsdl" />
+    <None Include="Service References\PositionDataProvider\PositionDataContext.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PositionDataProvider\PositionDataContext1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PositionDataProvider\PositionDataContext2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PositionInformationService\configuration91.svcinfo" />
+    <None Include="Service References\PositionInformationService\configuration.svcinfo" />
+    <None Include="Service References\PositionInformationService\PositionInformationService1.wsdl" />
+    <None Include="Service References\PositionInformationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Resource Include="CarbonFootprints\Resources\Images\car.png" />
+    <Resource Include="CarbonFootprints\Resources\Images\energyconsumption.png" />
+    <Resource Include="CarbonFootprints\Resources\Images\flight.png" />
+    <Resource Include="CarbonFootprints\Resources\Images\publictransport.png" />
+    <Resource Include="CarbonFootprints\Resources\Images\logo_raster.png" />
+    <Resource Include="CarbonFootprints\Resources\Images\delete.png" />
+    <Resource Include="CarbonFootprints\Resources\Images\pencil.png" />
+    <None Include="Service References\DomainModelService\Reference.datasvcmap">
+      <Generator>DataServicesCoreClientGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="installer\Wichtig - Installationsanleitung.txt" />
+    <None Include="Service References\PositionDataProvider\configuration91.svcinfo" />
+    <None Include="Service References\PositionDataProvider\configuration.svcinfo" />
+    <None Include="Service References\PositionDataProvider\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Libs\SilverlightControls.dll" />
+    <None Include="Service References\ExampleDataSeederService\configuration91.svcinfo" />
+    <None Include="Service References\ExampleDataSeederService\configuration.svcinfo" />
+    <None Include="Service References\ExampleDataSeederService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Service References\PositionInformationService\PositionInformationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PositionInformationService\PositionInformationService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CarbonFootprints\Resources\ChartStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CarbonFootprints\Views\CarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CarbonFootprints\Views\FlightView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CarbonFootprints\Views\FullyQualifiedCarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CarbonFootprints\Views\AirportBasedFlightView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CarbonFootprints\Views\EnergyConsumptionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CarbonFootprints\Views\PublicTransportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CarbonFootprints\Views\MachineEnergyConsumptionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CarbonFootprints\Views\PositionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CarbonFootprints\Workspace\CarbonFootprintDetailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CarbonFootprints\Workspace\CarbonFootprintOverView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CarbonFootprints\Views\PieChartControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CarbonFootprints\Views\StackedChartControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CarbonFootprints\Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CarbonFootprints\Resources\Templates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\DefaultStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\NamedStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell\DialogConductorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell\MessageBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CarbonFootprints\WorkspaceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CarbonFootprints\CarbonFootprintView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CarbonFootprints\Resources\Images\shopping-cart-full48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Settings\Resources\Images\report48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\backgroundshadow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\backgroundtexture.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ExampleDataSeederService\" />
+    <WCFMetadataStorage Include="Service References\PositionDataProvider\" />
+    <WCFMetadataStorage Include="Service References\PositionInformationService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceReferenceMetadataStorage Include="Service References\DomainModelService\">
+      <Type>datasvcmap</Type>
+    </ServiceReferenceMetadataStorage>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy "$(ProjectDir)installer\*" /ey .</PreBuildEvent>
+  </PropertyGroup>
+</Project>
